@@ -1,7 +1,10 @@
+import type { JSX } from "react";
 import MainLayout from "@/app/layouts/MainLayout";
-import Hero from "@/widgets/Hero";
+// 1. Исправили импорт на именованный (в фигурных скобках)
+import { Hero } from "@/widgets/Hero"; 
 
-function HomePage() {
+// 2. Добавили явную типизацию возвращаемого значения JSX.Element и именованный экспорт
+export function HomePage(): JSX.Element {
   return (
     <MainLayout>
       <main>
@@ -10,5 +13,3 @@ function HomePage() {
     </MainLayout>
   );
 }
-
-export default HomePage;
