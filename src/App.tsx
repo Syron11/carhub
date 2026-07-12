@@ -1,18 +1,31 @@
-import type { JSX } from "react";
+import { Routes, Route } from "react-router-dom";
 import { Header } from "./widgets/Header/Header";
-import { Hero } from "./widgets/Hero/Hero";
 import { FeaturedCars } from "./widgets/FeaturedCars/FeaturedCars";
+import { Hero } from "./widgets/Hero/Hero";
+import { Features } from "./widgets/Features/Features";
+import { Footer } from "./widgets/Footer/Footer";
+import { CarDetails } from "./pages/CarDetails"; // Убедись, что этот компонент экспортируется
 
-export default function App(): JSX.Element {
+export default function App() {
   return (
     <div className="min-h-screen w-full bg-[#0F0F0F] text-white antialiased overflow-x-hidden">
-      {/* Шапка сайта (все иконки импортируются внутри неё) */}
       <Header />
 
-      {/* Главный интерактивный 3D-блок */}
-      <Hero />
+      <Routes>
+        {/* Главная страница */}
+        <Route path="/" element={
+          <>
+            <Hero />
+            <FeaturedCars />
+            <Features />
+          </>
+        } />
 
-      <FeaturedCars />
+        {/* Страница деталей машины */}
+        <Route path="/cars/:id" element={<CarDetails />} />
+      </Routes>
+      
+      <Footer />
     </div>
   );
 }
