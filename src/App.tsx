@@ -4,11 +4,14 @@ import { FeaturedCars } from "./widgets/FeaturedCars/FeaturedCars";
 import { Hero } from "./widgets/Hero/Hero";
 import { Features } from "./widgets/Features/Features";
 import { Footer } from "./widgets/Footer/Footer";
-import { CarDetails } from "./pages/CarDetails"; // Убедись, что этот компонент экспортируется
+import { CarDetails } from "./pages/CarDetails";
+import { Catalog } from "./pages/Catalog"; // 1. Импортируй компонент
+import { ScrollToTop } from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <div className="min-h-screen w-full bg-[#0F0F0F] text-white antialiased overflow-x-hidden">
+      <ScrollToTop />
       <Header />
 
       <Routes>
@@ -20,6 +23,9 @@ export default function App() {
             <Features />
           </>
         } />
+
+        {/* 2. Добавь этот маршрут */}
+        <Route path="/catalog" element={<Catalog />} />
 
         {/* Страница деталей машины */}
         <Route path="/cars/:id" element={<CarDetails />} />

@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { Link } from "react-router-dom"; // Импортируем Link для навигации
 import { CarCanvas } from "./components/CarCanvas";
 
 export function Hero(): JSX.Element {
@@ -22,13 +23,13 @@ export function Hero(): JSX.Element {
           </p>
           
           <div className="w-full sm:w-auto pt-2 md:pt-4">
-            <a 
-              href="#catalog" 
+            <Link 
+              to="/catalog" 
               style={{ color: "#000000" }}
               className="block px-8 py-3.5 !bg-white !text-black font-medium text-xs md:text-sm rounded-sm hover:!bg-neutral-200 transition-colors duration-300 text-center uppercase tracking-wider"
             >
               Смотреть автомобили
-            </a>
+            </Link>
           </div>
         </div>
 

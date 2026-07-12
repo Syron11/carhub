@@ -7,9 +7,16 @@ interface CarCardProps {
 
 export function CarCard({ car }: CarCardProps) {
   return (
-    <div className="bg-[#121212] border border-neutral-800 p-6 flex flex-col gap-4">
-      {/* Здесь будет картинка, когда добавишь её в тип Car */}
-      <div className="bg-neutral-800 h-60 w-full" />
+    <div className="bg-[#121212] border border-neutral-800 p-6 flex flex-col gap-4 h-full">
+      {/* Картинка с резервированием места (aspect-video) и эффектом загрузки */}
+      <div className="w-full aspect-video overflow-hidden bg-neutral-800 animate-pulse">
+        <img 
+          src={car.imageUrl} 
+          alt={car.name} 
+          className="w-full h-full object-cover transition-opacity duration-500 opacity-0" 
+          onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
+        />
+      </div>
       
       <div>
         <h3 className="text-xl font-bold text-white">{car.name}</h3>
@@ -22,9 +29,11 @@ export function CarCard({ car }: CarCardProps) {
         <span className="text-lg text-white font-mono">
           {car.price.toLocaleString()} {car.currency}
         </span>
+        
+        {/* Кнопка с исправленным hover-эффектом */}
         <Link 
           to={`/cars/${car.id}`} 
-          className="px-6 py-2 border border-neutral-700 text-xs uppercase tracking-widest text-white hover:bg-white hover:text-black transition"
+          className="flex items-center justify-center px-6 py-2 border border-white text-white text-xs uppercase tracking-widest transition-colors duration-300 hover:bg-white hover:!text-black"
         >
           Подробнее
         </Link>
