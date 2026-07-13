@@ -33,3 +33,51 @@ a {
 button {
   cursor: pointer;
 }
+
+/* Основной контейнер календаря */
+.react-datepicker {
+  background-color: #171717 !important;
+  border: 1px solid #262626 !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+}
+
+/* Шапка (месяц и дни недели) */
+.react-datepicker__header {
+  background-color: #171717 !important;
+  border-bottom: 1px solid #262626 !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #a3a3a3 !important; /* Нейтральный серый */
+}
+
+/* Дни месяца */
+.react-datepicker__day {
+  color: #ffffff !important;
+}
+
+/* Ховер при наведении на день */
+.react-datepicker__day:hover {
+  background-color: #333333 !important;
+}
+
+/* Выбранный день */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+/* Стрелочки переключения месяцев */
+.react-datepicker__navigation--next,
+.react-datepicker__navigation--previous {
+  filter: invert(1); /* Инвертируем, чтобы стрелки стали белыми */
+}
+
+/* Убираем фон вокруг календаря, если нужно */
+.react-datepicker__triangle {
+  display: none !important;
+}

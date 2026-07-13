@@ -5,9 +5,10 @@ import { Hero } from "./widgets/Hero/Hero";
 import { Features } from "./widgets/Features/Features";
 import { Footer } from "./widgets/Footer/Footer";
 import { CarDetails } from "./pages/CarDetails";
-import { Catalog } from "./pages/Catalog"; // 1. Импортируй компонент
+import { Catalog } from "./pages/Catalog";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { CustomOrder } from "./pages/CustomOrder";
+import { Service } from "./pages/Service"; // 1. Импортируй компонент Service
 
 export default function App() {
   return (
@@ -25,8 +26,10 @@ export default function App() {
           </>
         } />
 
-        {/* 2. Добавь этот маршрут */}
         <Route path="/catalog" element={<Catalog />} />
+        
+        {/* 2. Добавь маршрут для страницы Сервис */}
+        <Route path="/service" element={<Service />} />
 
         {/* Страница деталей машины */}
         <Route path="/cars/:id" element={<CarDetails />} />
