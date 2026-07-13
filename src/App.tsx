@@ -7,6 +7,7 @@ import { Footer } from "./widgets/Footer/Footer";
 import { CarDetails } from "./pages/CarDetails";
 import { Catalog } from "./pages/Catalog"; // 1. Импортируй компонент
 import { ScrollToTop } from "./components/ScrollToTop";
+import { CustomOrder } from "./pages/CustomOrder";
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
 
         {/* Страница деталей машины */}
         <Route path="/cars/:id" element={<CarDetails />} />
+
+        <Route path="/custom" element={<CustomOrder />} />
       </Routes>
       
       <Footer />
